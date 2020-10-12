@@ -1,3 +1,4 @@
+//後端
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,6 +35,9 @@ public class SaveSessionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         //建立 session 並且儲存
+        HttpSession session=request.getSession(); //用request抓session下來
+        String food=request.getParameter("food");  //抓food的data
+        session.setAttribute("food",food);   
         ///////////////////////////////////////////////////////////////
         response.sendRedirect("session.jsp");
     }

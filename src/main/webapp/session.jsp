@@ -1,3 +1,4 @@
+<%-- 前端送food資料--%>
 <%-- 
     Document   : cookie
     Created on : Sep 13, 2018, 9:19:51 PM
@@ -20,8 +21,10 @@
             }
         %>
         <form action="saveSession" method="POST">
-            Your Favorite Food: <input type="text" name="food" value="<%=food%>"/><br/>
+            Your Favorite Food: <input type="text" name="food" value="<%=food%>"/><br/>  <%-- <%=food%> 是jsp語法--%>
             <input type="submit"/>
         </form>
+        </br>
+        <a href="logout">Logout</a>  <%--在表單後放個登出(連結)--%>
     </body>
 </html>
